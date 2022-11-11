@@ -86,13 +86,13 @@
     <comp lib="0" loc="(2170,1160)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
-      <a name="label" val="SOUT1"/>
+      <a name="label" val="SOUT0"/>
       <a name="output" val="true"/>
     </comp>
     <comp lib="0" loc="(2170,1380)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
-      <a name="label" val="SOUT0"/>
+      <a name="label" val="SOUT1"/>
       <a name="output" val="true"/>
     </comp>
     <comp lib="0" loc="(500,1810)" name="Pin">

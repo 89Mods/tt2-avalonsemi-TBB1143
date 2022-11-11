@@ -38,25 +38,25 @@ async def test_psg(dut):
 	await write_to_addr(dut, 7, 1)
 
 	for i in range(0, 5):
-		curr_state = dut.SIG0.value
+		curr_state = dut.SIG1.value
 		await ClockCycles(dut.CLK, 7)
-		assert dut.SIG0.value != curr_state
+		assert dut.SIG1.value != curr_state
 		await ClockCycles(dut.CLK, 7)
-		assert dut.SIG0.value == curr_state
+		assert dut.SIG1.value == curr_state
 
 	await write_to_addr(dut, 7, 0)
 	await write_to_addr(dut, 4, 0)
 	await write_to_addr(dut, 5, 0)
 	await write_to_addr(dut, 6, 1)
 	await write_to_addr(dut, 7, 2)
-	assert dut.SIG0 == 0
+	assert dut.SIG1 == 0
 
 	for i in range(0, 5):
-		curr_state = dut.SIG1.value
+		curr_state = dut.SIG0.value
 		await ClockCycles(dut.CLK, 16)
-		assert dut.SIG1.value != curr_state
+		assert dut.SIG0.value != curr_state
 		await ClockCycles(dut.CLK, 16)
-		assert dut.SIG1.value == curr_state
+		assert dut.SIG0.value == curr_state
 
 	await write_to_addr(dut, 7, 3)
 
@@ -68,9 +68,9 @@ async def test_psg(dut):
 		curr_state1 = dut.SIG1.value
 
 	await ClockCycles(dut.CLK, 16)
-	assert dut.SIG0.value == 0
-	assert dut.SIG1.value == 1
+	assert dut.SIG1.value == 0
+	assert dut.SIG0.value == 1
 
 	await ClockCycles(dut.CLK, 8)
-	assert dut.SIG0.value == 1
 	assert dut.SIG1.value == 1
+	assert dut.SIG0.value == 1

@@ -26,8 +26,8 @@ jobs:
       with:
         name: test-results
         path: |
-          /home/runner/work/tt2-AvalonSemi-5401/tt2-avalonsemi-TBB1143/src/tb.vcd
-          /home/runner/work/tt2-AvalonSemi-5401/tt2-avalonsemi-TBB1143/src/results.xml
+          /home/runner/work/tt2-avalonsemi-TBB1143/tt2-avalonsemi-TBB1143/src/tb.vcd
+          /home/runner/work/tt2-avalonsemi-TBB1143/tt2-avalonsemi-TBB1143/src/results.xml
   gds:
     needs: tests
     env:
