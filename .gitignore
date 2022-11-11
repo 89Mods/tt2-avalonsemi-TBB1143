@@ -1,0 +1,17 @@
+.DS_Store
+.idea
+.vscode
+*.vcd
+runs/
+openlane/
+pdk/
+caravel_user_project/
+src/tholin_avalonsemi_tbb1143.v
+
+__pycache__/
+sim_build/
+gds_out/
+
+# Unit test results
+*.xml
+*.vcd
