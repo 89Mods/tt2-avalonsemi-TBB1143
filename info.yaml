@@ -14,7 +14,6 @@ project:
     - memory/D_FLIPFLOP.v
     - memory/REGISTER_FLIP_FLOP.v
     - plexers/Demultiplexer_16.v
-    - plexers/Demultiplexer_8.v
     - plexers/Multiplexer_8.v
   top_module:  "tholin_avalonsemi_tbb1143"      # put the name of your top module here, make it unique by prepending your github username
 

@@ -9,7 +9,8 @@ module tb (
 	input A0,
 	input WR,
 	output SIG0,
-	output SIG1
+	output SIG1,
+	output SIG2
 	);
 
 	initial begin
@@ -22,6 +23,7 @@ module tb (
 	wire [7:0] outputs;
 	assign SIG0 = outputs[0];
 	assign SIG1 = outputs[1];
+	assign SIG2 = outputs[2];
 
 	`ifdef GL_TEST
 	tholin_avalonsemi_tbb1143 tholin_avalonsemi_tbb1143 (
@@ -41,6 +43,7 @@ module tb (
 					.RST(RST),
 					.SOUT0(SIG0),
 					.SOUT1(SIG1),
+					.SOUT2(SIG2),
 					.WR(WR));
 	`endif
 

@@ -10,10 +10,10 @@ module tholin_avalonsemi_tbb1143(
    wire s_D2 = io_in[4];
    wire s_D3 = io_in[5];
    wire s_RST = io_in[1];
-   wire [1:0] s_SOUT;
+   wire [2:0] s_SOUT;
    wire s_WR = io_in[7];
 
-   assign io_out[1:0] = s_SOUT;
+   assign io_out[2:0] = s_SOUT;
 
    reg [4:0] shifter;
 
@@ -40,5 +40,6 @@ module tholin_avalonsemi_tbb1143(
                      .RST(s_RST),
                      .SOUT0(s_SOUT[0]),
                      .SOUT1(s_SOUT[1]),
+			.SOUT2(s_SOUT[2]),
                      .WR(s_WR));
 endmodule
