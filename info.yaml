@@ -6,6 +6,7 @@ project:
     - toplevel/logisimTopLevelShell.v
     - circuit/main.v
     - circuit/tone_generator_2.v
+    - circuit/triangle_wave_generator.v
     - gates/AND_GATE.v
     - gates/AND_GATE_BUS.v
     - gates/OR_GATE.v
@@ -14,7 +15,6 @@ project:
     - memory/D_FLIPFLOP.v
     - memory/REGISTER_FLIP_FLOP.v
     - plexers/Demultiplexer_16.v
-    - plexers/Multiplexer_8.v
   top_module:  "tholin_avalonsemi_tbb1143"      # put the name of your top module here, make it unique by prepending your github username
 
 # As everyone will have access to all designs, try to make it easy for someone new to your design to know what
@@ -46,10 +46,10 @@ documentation:
   outputs:
     - SOUT0         # a description of what the outputs do
     - SOUT1
-    - NC
-    - NC
-    - NC
-    - NC
+    - T0
+    - T1
+    - T2
+    - T3
     - NC
     - NC
 

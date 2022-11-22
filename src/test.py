@@ -25,7 +25,7 @@ async def test_psg(dut):
 	dut.data_in.value = 0
 	clock = Clock(dut.CLK, 400, units="us")
 	cocotb.start_soon(clock.start())
-	fclock = Clock(dut.FCLK, 1, units="us")
+	fclock = Clock(dut.FCLK, 0.5, units="us")
 	cocotb.start_soon(fclock.start())
 	
 	dut._log.info("reset")
@@ -46,7 +46,7 @@ async def test_psg(dut):
 		await ClockCycles(dut.CLK, 7)
 		assert dut.SIG0.value == curr_state
 
-	await write_to_addr(dut, 7, 0)
+	await ClockCycles(dut.CLK, 5)
 	await write_to_addr(dut, 4, 0)
 	await write_to_addr(dut, 5, 0)
 	await write_to_addr(dut, 6, 1)
@@ -76,3 +76,12 @@ async def test_psg(dut):
 	await ClockCycles(dut.CLK, 16)
 	assert dut.SIG1.value == 1
 	assert dut.SIG0.value == 1
+
+	await write_to_addr(dut, 9, 0b0010)
+	await write_to_addr(dut, 8, 0b0111)
+	await write_to_addr(dut, 7, 0)
+	await write_to_addr(dut, 15, 4)
+	await ClockCycles(dut.CLK, 4)
+	for i in range(0, 16):
+		assert dut.triangle_w.value == i
+		await ClockCycles(dut.CLK, 5)
