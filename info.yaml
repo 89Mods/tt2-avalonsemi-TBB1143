@@ -15,6 +15,7 @@ project:
     - memory/D_FLIPFLOP.v
     - memory/REGISTER_FLIP_FLOP.v
     - plexers/Demultiplexer_16.v
+    - arith/Adder.v
   top_module:  "tholin_avalonsemi_tbb1143"      # put the name of your top module here, make it unique by prepending your github username
 
 # As everyone will have access to all designs, try to make it easy for someone new to your design to know what
@@ -23,7 +24,8 @@ project:
 # Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
 #
 # This info will be automatically collected and used to make a datasheet for the chip.
-documentation: 
+documentation:
+  discord:      "Tholin#7559"
   author:       "Tholin"      # Your name
   title:        "Avalon Semiconductors 'TBB1143' Programmable Sound Generator"      # Project title
   description:  "Sound generator with two basic, square-wave voices. Can also be used as a general-purpose frequency generator."      # Short description of what your project does

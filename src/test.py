@@ -81,3 +81,12 @@ async def test_psg(dut):
 	for i in range(0, 16):
 		assert dut.sample.value == i
 		await ClockCycles(dut.CLK, 5)
+		
+	await write_to_addr(dut, 12, 0b0010)
+	await write_to_addr(dut, 11, 0b0111)
+	await write_to_addr(dut, 10, 0)
+	await write_to_addr(dut, 15, 8)
+	test_vals = [0x03, 0x0B, 0x04, 0x04, 0x08, 0x05]
+	for i in range(0, 6):
+		assert dut.sample.value == test_vals[i]
+		await ClockCycles(dut.CLK, 10)
