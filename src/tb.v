@@ -10,7 +10,9 @@ module tb (
 	input WR,
 	output SIG0,
 	output SIG1,
-	output [5:0] sample
+	output [5:0] sample,
+	output LED0,
+	output LED1
 	);
 
 	initial begin
@@ -22,6 +24,8 @@ module tb (
 	wire [7:0] inputs = {WR, A0, data_in, RST, CLK};
 	wire [7:0] outputs;
 	assign sample = outputs[5:0];
+	assign LED0 = outputs[6];
+	assign LED1 = outputs[7];
 
 	`ifdef GL_TEST
 	tholin_avalonsemi_tbb1143 tholin_avalonsemi_tbb1143 (
@@ -45,7 +49,9 @@ module tb (
 					.S2(sample[2]),
 					.S3(sample[3]),
 					.S4(sample[4]),
-					.S5(sample[5])
+					.S5(sample[5]),
+					.LED0(LED0),
+					.LED1(LED1)
 					);
 	`endif
 

@@ -65,6 +65,8 @@
       <mc key="/D2" map="521,148"/>
       <mc key="/D3" map="538,148"/>
       <mc key="/FCLK" map="612,210"/>
+      <mc key="/LED0" map="563,216"/>
+      <mc key="/LED1" map="578,216"/>
       <mc key="/RST" map="612,251"/>
       <mc key="/S0" map="473,216"/>
       <mc key="/S1" map="488,216"/>
@@ -158,6 +160,18 @@
       <a name="label" val="S5"/>
       <a name="output" val="true"/>
     </comp>
+    <comp lib="0" loc="(3210,2010)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="LED0"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(3210,2100)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="LED1"/>
+      <a name="output" val="true"/>
+    </comp>
     <comp lib="0" loc="(500,1810)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="CLK"/>
@@ -229,6 +243,12 @@
       <a name="appearance" val="logisim_evolution"/>
       <a name="width" val="4"/>
     </comp>
+    <comp lib="4" loc="(2880,2000)" name="D Flip-Flop">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
+    <comp lib="4" loc="(2880,2090)" name="D Flip-Flop">
+      <a name="appearance" val="logisim_evolution"/>
+    </comp>
     <comp lib="4" loc="(770,1040)" name="D Flip-Flop">
       <a name="appearance" val="logisim_evolution"/>
     </comp>
@@ -291,6 +311,8 @@
     <wire from="(1150,1750)" to="(1280,1750)"/>
     <wire from="(1170,1770)" to="(1170,1860)"/>
     <wire from="(1170,1770)" to="(1290,1770)"/>
+    <wire from="(1170,1860)" to="(1170,2050)"/>
+    <wire from="(1170,2050)" to="(2760,2050)"/>
     <wire from="(1180,2080)" to="(1210,2080)"/>
     <wire from="(1210,1970)" to="(1210,2080)"/>
     <wire from="(1220,1600)" to="(1500,1600)"/>
@@ -307,9 +329,13 @@
     <wire from="(1230,1910)" to="(1300,1910)"/>
     <wire from="(1230,1920)" to="(1290,1920)"/>
     <wire from="(1230,1930)" to="(1280,1930)"/>
+    <wire from="(1230,1940)" to="(1270,1940)"/>
+    <wire from="(1230,1950)" to="(1430,1950)"/>
     <wire from="(1230,1960)" to="(1410,1960)"/>
     <wire from="(1260,1420)" to="(1260,1710)"/>
     <wire from="(1270,1420)" to="(1270,1730)"/>
+    <wire from="(1270,1940)" to="(1270,2030)"/>
+    <wire from="(1270,2030)" to="(2790,2030)"/>
     <wire from="(1280,1420)" to="(1280,1750)"/>
     <wire from="(1280,1930)" to="(1280,1940)"/>
     <wire from="(1280,1940)" to="(1450,1940)"/>
@@ -356,6 +382,8 @@
     <wire from="(1430,1360)" to="(1430,1580)"/>
     <wire from="(1430,1360)" to="(1480,1360)"/>
     <wire from="(1430,1580)" to="(1520,1580)"/>
+    <wire from="(1430,1950)" to="(1430,2140)"/>
+    <wire from="(1430,2140)" to="(2870,2140)"/>
     <wire from="(1430,2360)" to="(1430,2370)"/>
     <wire from="(1430,640)" to="(1430,1140)"/>
     <wire from="(1450,1480)" to="(1450,1860)"/>
@@ -457,10 +485,18 @@
     <wire from="(2720,1650)" to="(2860,1650)"/>
     <wire from="(2740,1670)" to="(2740,1780)"/>
     <wire from="(2740,1670)" to="(2860,1670)"/>
+    <wire from="(2760,2010)" to="(2760,2050)"/>
+    <wire from="(2760,2010)" to="(2870,2010)"/>
+    <wire from="(2760,2050)" to="(2760,2100)"/>
+    <wire from="(2760,2100)" to="(2870,2100)"/>
+    <wire from="(2790,2030)" to="(2790,2050)"/>
+    <wire from="(2790,2050)" to="(2870,2050)"/>
     <wire from="(2870,1610)" to="(2880,1610)"/>
     <wire from="(2880,1610)" to="(2880,1640)"/>
     <wire from="(2880,1680)" to="(2880,1700)"/>
     <wire from="(2900,1660)" to="(3010,1660)"/>
+    <wire from="(2930,2010)" to="(3210,2010)"/>
+    <wire from="(2930,2100)" to="(3210,2100)"/>
     <wire from="(3030,1510)" to="(3030,1600)"/>
     <wire from="(3030,1510)" to="(3210,1510)"/>
     <wire from="(3030,1610)" to="(3050,1610)"/>

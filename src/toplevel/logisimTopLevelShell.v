@@ -12,8 +12,12 @@ module tholin_avalonsemi_tbb1143(
 	wire s_RST = io_in[1];
 	wire s_WR = io_in[7];
 	wire [5:0] s_SOUT;
+	wire LED0;
+	wire LED1;
 
 	assign io_out[5:0] = s_SOUT;
+	assign io_out[6] = LED0;
+	assign io_out[7] = LED1;
 
 	reg [4:0] shifter;
 
@@ -44,6 +48,8 @@ module tholin_avalonsemi_tbb1143(
 							.S2(s_SOUT[2]),
 							.S3(s_SOUT[3]),
 							.S4(s_SOUT[4]),
-							.S5(s_SOUT[5])
+							.S5(s_SOUT[5]),
+							.LED0(LED0),
+							.LED1(LED1)
 							);
 endmodule
