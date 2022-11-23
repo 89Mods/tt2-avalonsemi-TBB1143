@@ -38,9 +38,9 @@ The following registers are present inside the 1143:
 **Note:** Address 0 is reserved, and writes to that address will have no effect.
 
 Layout of Voice Enable Mask:
-| 0 | 1 | 2 | 3 |
+| 3 | 2 | 1 | 0 |
 | - | - | - | - |
-| V1 | V2 | V3 | N |
+| N | V2 | V1 | V0 |
 
 ## Programming
 
