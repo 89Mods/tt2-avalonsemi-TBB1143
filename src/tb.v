@@ -10,7 +10,7 @@ module tb (
 	input WR,
 	output SIG0,
 	output SIG1,
-	output [3:0] triangle_w
+	output [5:0] sample
 	);
 
 	initial begin
@@ -21,7 +21,7 @@ module tb (
 
 	wire [7:0] inputs = {WR, A0, data_in, RST, CLK};
 	wire [7:0] outputs;
-	assign triangle_w = outputs[5:2];
+	assign sample = outputs[5:0];
 
 	`ifdef GL_TEST
 	tholin_avalonsemi_tbb1143 tholin_avalonsemi_tbb1143 (
@@ -39,13 +39,13 @@ module tb (
 					.D3(data_in[3]),
 					.FCLK(FCLK),
 					.RST(RST),
-					.SOUT0(SIG0),
-					.SOUT1(SIG1),
 					.WR(WR),
-					.T0(triangle_w[0]),
-					.T1(triangle_w[1]),
-					.T2(triangle_w[2]),
-					.T3(triangle_w[3])
+					.S0(sample[0]),
+					.S1(sample[1]),
+					.S2(sample[2]),
+					.S3(sample[3]),
+					.S4(sample[4]),
+					.S5(sample[5])
 					);
 	`endif
 

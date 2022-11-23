@@ -11,11 +11,9 @@ module tholin_avalonsemi_tbb1143(
 	wire s_D3 = io_in[5];
 	wire s_RST = io_in[1];
 	wire s_WR = io_in[7];
-	wire [1:0] s_SOUT;
-	wire [3:0] s_TRIANG;
+	wire [5:0] s_SOUT;
 
-	assign io_out[1:0] = s_SOUT;
-	assign io_out[5:3] = s_TRIANG;
+	assign io_out[5:0] = s_SOUT;
 
 	reg [4:0] shifter;
 
@@ -40,12 +38,12 @@ module tholin_avalonsemi_tbb1143(
 							.D3(s_D3),
 							.FCLK(c2_5),
 							.RST(s_RST),
-							.SOUT0(s_SOUT[0]),
-							.SOUT1(s_SOUT[1]),
 							.WR(s_WR),
-							.T0(s_TRIANG[0]),
-							.T1(s_TRIANG[1]),
-							.T2(s_TRIANG[2]),
-							.T3(s_TRIANG[3])
+							.S0(s_SOUT[0]),
+							.S1(s_SOUT[1]),
+							.S2(s_SOUT[2]),
+							.S3(s_SOUT[3]),
+							.S4(s_SOUT[4]),
+							.S5(s_SOUT[5])
 							);
 endmodule
