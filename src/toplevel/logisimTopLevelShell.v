@@ -28,11 +28,11 @@ module tholin_avalonsemi_tbb1143(
 	end
 
 	wire c2_1, c2_2, c2_3, c2_4, c2_5;
-	assign c2_1 = c2_5 & shifter[0];
-	assign c2_2 = c2_1 & shifter[1];
-	assign c2_3 = c2_2 & shifter[2];
-	assign c2_4 = c2_3 & shifter[3];
-	assign c2_5 = c2_4 & shifter[4];
+	assign c2_1 = !c2_5 & shifter[0];
+	assign c2_2 = !c2_1 & shifter[1];
+	assign c2_3 = !c2_2 & shifter[2];
+	assign c2_4 = !c2_3 & shifter[3];
+	assign c2_5 = !c2_4 & shifter[4];
 
 	main   CIRCUIT_0 (.A0(s_A0),
 							.CLK(s_CLK),
